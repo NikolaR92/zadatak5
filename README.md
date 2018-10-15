@@ -16,4 +16,5 @@ yarn migrate - creates tables
 *if port for runing server should change then changes to config file on client side should change too because in config file is path to server side
 
 *In src/client/service folder are functions for comunication with server api routes
+
 *In src/server/controllers folder are functions for controling api servers routes
