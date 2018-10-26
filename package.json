@@ -2,11 +2,17 @@
   "name": "MyAPP",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-  },
+  "dependencies": {},
   "scripts": {
     "server": "yarn --cwd src/server start:dev",
     "client": "yarn --cwd src/client start",
-    "start": "yarn server | yarn client"
+    "start": "yarn server | yarn client",
+    "install": "yarn --cwd src/server install | yarn --cwd src/client install",
+    "migrate": "yarn --cwd src/server migrate",
+    "migrate:data": "yarn --cwd src/server migrate:data",
+    "generate:docs": "./node_modules/.bin/jsdoc ./src ./README.md"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
   }
 }

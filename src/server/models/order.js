@@ -1,5 +1,3 @@
-// 'use strict';
-
 module.exports = (sequelize, DataTypes) => {
 	const Order = sequelize.define('Order', {
 		dateDelivery: {
@@ -18,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 		isDelivered: DataTypes.BOOLEAN,
 	}, {});
 	Order.associate = function associate(models) {
-		// associations can be defined here
+		/** associations can be defined here */
 		Order.belongsTo(models.Product, {
 			foreignKey: 'productId',
 			onDelete: 'CASCADE',

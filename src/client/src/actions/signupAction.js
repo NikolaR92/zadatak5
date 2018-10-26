@@ -5,14 +5,14 @@ import history from '../js/history';
 const { userService } = service;
 
 
-// START - User signup constants
+/** START - User signup constants */
 const SIGNUP_REQUEST = 'USERS_SIGNUP_REQUEST';
 const SIGNUP_SUCCESS = 'USERS_SIGNUP_SUCCESS';
 const SIGNUP_FAILURE = 'USERS_SIGNUP_FAILURE';
-// END - USer signup constants
+/** END - USer signup constants */
 
 
-// Action for signing up user
+/** Action for signing up user */
 function signup(user) {
 	function request(userObject) { return { type: SIGNUP_REQUEST, userObject }; }
 	function success() { return { type: SIGNUP_SUCCESS }; }

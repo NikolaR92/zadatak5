@@ -2,11 +2,11 @@ const { UserSesion } = require('../../models');
 
 module.exports = {
 	logout(req, res) {
-	// geting token
+	/** geting token */
 		const { params } = req;
 		const { token } = params;
 
-		// Verify if token is one of a kind and it not deleted
+		/** Verify if token is one of a kind and it not deleted */
 
 		return UserSesion.find({ where: { token, isDeleted: false } })
 			.then(

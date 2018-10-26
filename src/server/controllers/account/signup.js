@@ -24,7 +24,7 @@ module.exports = {
 		email = email.trim();
 
 
-		// Verify email doesn't exist
+		/** Verify email doesn't exist */
 		return User.find({ where: { email } })
 			.then((account) => {
 				if (account) {
@@ -33,14 +33,14 @@ module.exports = {
 						message: 'Error: Account already exists',
 					});
 				}
-				// generating new user
+				/** generating new user */
 				const newUser = new User();
 				newUser.firstName = firstName;
 				newUser.lastName = lastName;
 				newUser.email = email;
 				newUser.password = newUser.generateHash(password);
 				newUser.isDeleted = false;
-				// save new user
+				/** save new user */
 				return newUser.save()
 					.then(() => res.status(201).send({
 						success: true,

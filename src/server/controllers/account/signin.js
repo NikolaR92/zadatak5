@@ -23,7 +23,7 @@ module.exports = {
 
 		email = email.toLowerCase();
 		email = email.trim();
-		// Verify email  exist
+		/** Verify email  exist */
 		return User.findAll({ where: { email, isDeleted: false } })
 			.then((accounts) => {
 				if (accounts.length !== 1) {
@@ -32,7 +32,7 @@ module.exports = {
 						message: 'Error: Invalid',
 					});
 				}
-				// check if password is valide
+				/** check if password is valide */
 				const account = accounts[0];
 
 				if (!account.validPassword(password)) {
@@ -42,13 +42,13 @@ module.exports = {
 					});
 				}
 
-				// User is valide and we create userSesion
+				/** User is valide and we create userSesion */
 				const userSesion = new UserSesion();
 				userSesion.userId = account.id;
 				userSesion.isDeleted = false;
 				userSesion.token = userSesion.generateToken();
 
-				// save new user
+				/** save new user */
 				return userSesion.save()
 					.then(sesion => res.status(201).send({
 						success: true,

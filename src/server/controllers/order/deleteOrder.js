@@ -7,7 +7,7 @@ module.exports = {
 		const { token } = params;
 		const { orderId } = body;
 
-		// check if user is logged in
+		/** check if user is logged in */
 		return UserSesion.findAll({ where: { token, isDeleted: false } })
 			.then((sesions) => {
 				if (sesions.length !== 1) {
@@ -16,7 +16,7 @@ module.exports = {
 						message: 'Error: Invalid',
 					});
 				}
-				// if tokken is valid get all orders for that user
+				/** if tokken is valid get all orders for that user */
 				return Order.find({ where: { id: orderId, isDeleted: false } })
 					.then((order) => {
 						order.isDeleted = true;

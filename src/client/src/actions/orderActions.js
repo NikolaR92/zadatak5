@@ -1,8 +1,13 @@
+/**
+ * Order Action Module
+ * @module src/actions/deleteActions
+ */
+
 import service from '../service';
 
 const { orderService } = service;
 
-
+/** START - Constants for Order Action */
 const ORDERS_GETALL_REQUEST = 'ORDERS_GETALL_REQUEST';
 const ORDERS_GETALL_SUCCESS = 'ORDERS_GETALL_SUCCESS';
 const ORDERS_GETALL_FAILURE = 'ORDERS_GETALL_FAILURE';
@@ -10,6 +15,8 @@ const ORDERS_GETALL_FAILURE = 'ORDERS_GETALL_FAILURE';
 const ORDER_DELETE_REQUEST = 'ORDER_DELETE_REQUEST';
 const ORDER_DELETE_SUCCESS = 'ORDER_DELETE_SUCCESS';
 const ORDER_DELETE_FAILURE = 'ORDER_DELETE_FAILURE';
+/** END - Constants for Order Action */
+
 
 function getAll() {
 	function request() { return { type: ORDERS_GETALL_REQUEST }; }

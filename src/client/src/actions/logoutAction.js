@@ -2,11 +2,11 @@ import service from '../service';
 import history from '../js/history';
 
 const { userService } = service;
-// START User logout constant
+/** START - User logout constant */
 const LOGOUT_REQUEST = 'USERS_LOGOUT_REQUEST';
 const LOGOUT_SUCCESS = 'USERS_LOGOUT_SUCCESS';
 const LOGOUT_FAILURE = 'USERS_LOGOUT_FAILURE';
-// END User logout constant
+/** END - User logout constant */
 
 
 function logout() {
@@ -21,12 +21,12 @@ function logout() {
 			.then(
 				() => {
 					dispatch(success());
-					history.push('/signin');
 				},
 				error => dispatch(failure(error.toString()))
 			);
 	};
 }
+history.push('/signin');
 
 const logoutAction = {
 	LOGOUT_REQUEST,

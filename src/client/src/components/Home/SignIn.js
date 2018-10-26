@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 import actions from '../../actions';
 
 const { signinAction, logoutAction } = actions;
-// import '../../style/SignIn.css';
+
 
 class SignIn extends Component {
 	constructor(props) {
 		super(props);
 
-		// Called automaticli on visiting page
+		/** Called automaticli on visiting page */
 		const token = localStorage.getItem('token');
 		if (token) {
 			const { dispatch } = this.props;

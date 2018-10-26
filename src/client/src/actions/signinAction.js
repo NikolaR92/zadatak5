@@ -5,13 +5,13 @@ import history from '../js/history';
 const { userService } = service;
 
 
-// START - User signin constants
+/** START - User signin constants */
 const SIGNIN_REQUEST = 'USERS_SIGNIN_REQUEST';
 const SIGNIN_SUCCESS = 'USERS_SIGNIN_SUCCESS';
 const SIGNIN_FAILURE = 'USERS_SIGNIN_FAILURE';
-// END - User signin constants
+/** END - User signin constants */
 
-// Action for signin a User with email and password
+/** Action for signin a User with email and password */
 function signin(email, password) {
 	function request(emailObject) { return { type: SIGNIN_REQUEST, emailObject }; }
 	function success(token) { return { type: SIGNIN_SUCCESS, token }; }

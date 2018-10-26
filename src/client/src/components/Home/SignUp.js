@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import actions from '../../actions';
-// import '../../style/SignUp.css';
 
 const { signupAction } = actions;
 

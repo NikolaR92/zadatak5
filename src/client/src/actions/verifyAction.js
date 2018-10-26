@@ -1,5 +1,5 @@
 
-// User verify constant
+/** User verify constant */
 export const VERIFY = 'USERS_VERIFY';
 
 const verifyAction = {

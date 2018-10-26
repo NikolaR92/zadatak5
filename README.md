@@ -1,20 +1,110 @@
-```
-yarn install
-```
-```
-yarn start - starts client side on localhost:3000 and server side on localhost:3001
+# Web Shop
+
+Web Site was made as a test for a Internship. Site simulate basic online store,
+where you have to Sign In to view products and ordered them. Site is seperated on client and server side.
+Client and server side when started run on your local machine on following addresses:
+- Client side runs on [client](localhost:3000)
+- Server side runs on [server](localhost:3001)
+
+Before starting a site after migration, product table should be filled with random products of your choosing.
+
+
+## Dependencies
+* [git](https://git-scm.com/) - Distributed version control system
+* [node.js](http://nodejs.org) - JavaScript runtime
+* [yarn](https://yarnpkg.com) - Packages dependecy manager
+* [MYSQL](https://www.mysql.com/) - Open-source relational database management system
+
+## Clone a repository
+
+```sh
+$ git clone https://NikolaR92@bitbucket.org/NikolaR92/zadatak4.git
 ```
 
-*To migrate database and tables go to src/server and type
+## Installing dependencies for Ubuntu
+
+Npm
+```sh
+$ sudo apt-get install npm
 ```
-yarn migrate - cteates database and tables
-yarn migrate - creates tables
+Yarn
+```sh
+$ sudo apt-get install curl
+$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$ sudo apt-get update
+$ sudo apt-get install yarn
 ```
 
-*Product table should be filled with few products so that client side could show it
+git
+```sh
+$ sudo apt-get install git
+```
+MYSQL
+```sh
+$ sudo apt-get install mysql-server
+```
 
-*if port for runing server should change then changes to config file on client side should change too because in config file is path to server side
+## Install tools JavaScript
 
-*In src/client/service folder are functions for comunication with server api routes
+```sh
+$ yarn install - installs all packages of a project
+$ yarn upgrade - upgrades all packages of a project
+```
+## Adding new packages with yarn
 
-*In src/server/controllers folder are functions for controling api servers routes
+### Client side
+  dependencies
+  ```sh
+  $ cd src/client
+  $ yarn add package_name
+  ```
+  devDependencies
+  ```sh
+  $ cd src/client
+  $ yarn add --dev package_name
+  ```
+
+### Server side
+
+  dependencies
+  ```sh
+  $ cd src/server
+  $ yarn add package_name
+  ```
+  devDependencies
+  ```sh
+  $ cd src/server
+  $ yarn add --dev package_name
+  ```
+
+## JavaScript packages for a project
+
+### Client side
+* [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces
+* [Redux.js](https://redux.js.org/) - Redux is a predictable state container for JavaScript apps.
+* [Immutable.js](http://facebook.github.io/immutable-js/) - Immutable.js provides many Persistent Immutable data structures
+### Server side
+* [Express](https://expressjs.com/) - Node.js web application framework that provides a robust set of features for web and mobile applications
+* [Sequelize](http://docs.sequelizejs.com/) - Is a promise-based ORM for Node.js
+
+## Start project
+```sh
+$ yarn start
+```
+
+## Build project
+```sh
+$ yarn build
+```
+
+## Migrate database and tables
+```sh
+yarn migrate - creates database and tables
+yarn migrate:data - creates tables
+```
+
+## Create documentation
+```sh
+$ yarn generate:docs
+```

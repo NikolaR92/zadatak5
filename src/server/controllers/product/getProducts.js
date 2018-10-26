@@ -6,7 +6,7 @@ module.exports = {
 		const { params } = req;
 		const { token } = params;
 
-		// check if user is loged in
+		/** check if user is loged in */
 		return UserSesion.findAll({ where: { token, isDeleted: false } })
 			.then((sesions) => {
 				if (sesions.length !== 1) {
@@ -16,7 +16,7 @@ module.exports = {
 					});
 				}
 
-				// return list of all products
+				/** return list of all products */
 				return Product.findAll()
 					.then((products) => {
 						console.log('Proslo');

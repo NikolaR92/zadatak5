@@ -7,7 +7,7 @@ module.exports = {
 		const { body, params } = req;
 		const { token } = params;
 		const { productId, dateDelivery, quantity } = body;
-		// Check if user is loged in
+		/** Check if user is loged in */
 
 		return UserSesion.findAll({ where: { token, isDeleted: false } })
 			.then((sesions) => {
@@ -20,7 +20,7 @@ module.exports = {
 
 				const sesion = sesions[0];
 				const { userId } = sesion;
-				// check if product exists
+				/** check if product exists */
 				return Product.find({
 					where: {
 						id: productId,
@@ -31,7 +31,7 @@ module.exports = {
 					},
 				})
 					.then((product) => {
-						// create a new Order
+						/** create a new Order */
 						const newOrder = new Order();
 
 						newOrder.userId = userId;
