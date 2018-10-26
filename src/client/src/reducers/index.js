@@ -6,6 +6,7 @@ import registration from './registrationReducer';
 import alert from './alertReducer';
 import products from './productReducers';
 import orders from './orderReducers';
+import deleteUser from './deleteReducer';
 
 const rootReducer = combineReducers({
 	authentication,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
 	alert,
 	products,
 	orders,
+	deleteUser,
 });
 
 export default rootReducer;

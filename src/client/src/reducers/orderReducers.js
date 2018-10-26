@@ -3,19 +3,29 @@ import actions from '../actions';
 
 const { orderActions } = actions;
 
+const initialStateOrders = {
+	loading: false,
+	items: List(),
+	error:''
+}
 
-function orders(state = { items: List() }, action) {
+function orders(state = initialStateOrders, action) {
 	switch (action.type) {
 	case orderActions.ORDERS_GETALL_REQUEST:
 		return {
+			...state,
 			loading: true,
 		};
 	case orderActions.ORDERS_GETALL_SUCCESS:
 		return {
+			...state,
+			loading:false,
 			items: List(action.orders),
 		};
 	case orderActions.ORDERS_GETALL_FAILURE:
 		return {
+			...state,
+			loading:false,
 			error: action.error,
 		};
 	case orderActions.ORDER_DELETE_REQUEST:
@@ -27,6 +37,7 @@ function orders(state = { items: List() }, action) {
 		};
 	case orderActions.ORDER_DELETE_SUCCESS:
 		return {
+			...state,
 			items: state.items.filter(order => order.id !== action.id),
 		};
 	case orderActions.ORDER_DELETE_FAILURE:
@@ -37,8 +48,8 @@ function orders(state = { items: List() }, action) {
 				: order)),
 		};
 	default:
+		return state;
 	}
-	return state;
 }
 
 
