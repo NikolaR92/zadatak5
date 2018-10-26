@@ -3,7 +3,7 @@ import actions from '../actions';
 const { deleteAction } = actions;
 
 
-function orders(state = { }, action) {
+function deleteUser(state = {deleting:false }, action) {
 	switch (action.type) {
 	case deleteAction.USERS_DELETE_REQUEST:
 		return {
@@ -11,7 +11,7 @@ function orders(state = { }, action) {
 		};
 	case deleteAction.USERS_DELETE_SUCCESS:
 		return {
-			deleting: true,
+			deleting: false,
 		};
 	case deleteAction.USERS_DELETE_FAILURE:
 		return {
@@ -23,4 +23,4 @@ function orders(state = { }, action) {
 }
 
 
-export default orders;
+export default deleteUser;

@@ -30,7 +30,7 @@ class Options extends Component {
 }
 
 function mapStateToProps(state) {
-	const { deleting } = state;
+	const { deleting } = state.deleteUser;
 	return {
 		deleting,
 	};

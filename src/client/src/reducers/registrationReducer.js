@@ -6,9 +6,9 @@ function registration(state = { registering: false }, action) {
 	case signupAction.SIGNUP_REQUEST:
 		return { registering: true };
 	case signupAction.SIGNUP_SUCCESS:
-		return {};
+		return { registering:false};
 	case signupAction.SIGNUP_FAILURE:
-		return {};
+		return {registering:false};
 	default:
 		return state;
 	}

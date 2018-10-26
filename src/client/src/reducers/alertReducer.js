@@ -1,7 +1,12 @@
 import actions from '../actions';
 
+const initialStateAlert = {
+	type: '',
+	message: ''
+}
+
 const { alertActions } = actions;
-function alert(state = {}, action) {
+function alert(state = initialStateAlert, action) {
 	switch (action.type) {
 	case alertActions.SUCCESS:
 		return {
@@ -14,7 +19,7 @@ function alert(state = {}, action) {
 			message: action.message,
 		};
 	case alertActions.CLEAR:
-		return {};
+		return initialStateAlert;
 	default:
 		return state;
 	}
