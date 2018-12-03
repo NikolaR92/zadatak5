@@ -102,11 +102,11 @@ class SignUp extends Component {
 						</label>
 					</div>
 					<div className="form-group">
-						<button type="submit" className="btn btn-primary">Register</button>
+						<button type="submit" className="btn btn-dark">Register</button>
 						{signingUp
                         && <p>Loading ....</p>
 						}
-						<Link to="/signin" href="/signin" className="btn btn-link"><button type="button">Cancel</button></Link>
+						<Link to="/signin" href="/signin" className="btn btn-dark">Cancel</Link>
 					</div>
 				</form>
 			</div>

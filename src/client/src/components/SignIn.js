@@ -86,13 +86,11 @@ class SignIn extends Component {
               && <div className="help-block">Password is required </div>
 						}
 					</div>
-					<button type="submit" className="btn btn-link">
-						<p>Sign In</p>
-					</button>
+					<button type="submit" className="btn btn-dark">Sign In</button>
 					{signingIn
               && <p>Loading ....</p>
 					}
-					<Link to="/signup" href="/signup" className="btn btn-link"><button type="button">Sign Up</button></Link>
+					<Link to="/signup" href="/signup" className="btn btn-dark">Sign Up</Link>
 				</form>
 			</div>
 		);
