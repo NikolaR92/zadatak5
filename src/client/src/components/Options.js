@@ -1,43 +1,48 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import actions from '../actions';
 
-const { deleteAction, logoutAction } = actions;
+import { bindActionCreators } from 'redux';
+import deleteUserActions from '../redux/DeleteUser/deleteUserActions';
 
-class Options extends Component {
-	handleDelete() {
-		const { dispatch } = this.props;
-		return () => dispatch(deleteAction.deleteUser());
-	}
-
-	handleLogOut() {
-		const { dispatch } = this.props;
-		return () => dispatch(logoutAction.logout());
-	}
-
-	render() {
-		return (
-			<div>
-				<p>Welcome to Account options</p>
-				<button type="button" onClick={this.handleLogOut()}> Logout</button>
-				<Link to="/" href="/" className="btn btn-link"><button type="button">Home </button></Link>
-				<button type="button" onClick={this.handleDelete()}> Delete Account</button>
-			</div>
-		);
-	}
-}
 
 function mapStateToProps(state) {
-	const { deleting } = state.deleteUser;
+	const deleting = state.deleteUser.get('deleting');
 	return {
 		deleting,
 	};
 }
 
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(
+		{ deleteUser: deleteUserActions.deleteUser }, dispatch
+	);
+}
+
+
+class Options extends Component {
+	handleDelete() {
+		const { deleteUser } = this.props;
+		deleteUser();
+	}
+
+	render() {
+		const { deleting } = this.props;
+		return (
+			<div>
+				<h2>Account options</h2>
+				{deleting && <p>Deleting .....</p>}
+				{!deleting && <button type="button" onClick={() => (this.handleDelete())}> Delete Account</button>}
+			</div>
+		);
+	}
+}
+
+
 Options.propTypes = {
-	dispatch: PropTypes.func.isRequired,
+	deleting: PropTypes.bool.isRequired,
+	deleteUser: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(Options);
+export default connect(mapStateToProps, mapDispatchToProps)(Options);

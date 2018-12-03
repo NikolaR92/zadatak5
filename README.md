@@ -1,7 +1,7 @@
 # Web Shop
 
 Web Site was made as a test for a Internship. Site simulate basic online store,
-where you have to Sign In to view products and ordered them. Site is seperated on client and server side.
+where you have to Sign In to view products and ordered them. Site is separated on client and server side.
 Client and server side when started run on your local machine on following addresses:
 - Client side runs on [client](localhost:3000)
 - Server side runs on [server](localhost:3001)
@@ -12,13 +12,13 @@ Before starting a site after migration, product table should be filled with rand
 ## Dependencies
 * [git](https://git-scm.com/) - Distributed version control system
 * [node.js](http://nodejs.org) - JavaScript runtime
-* [yarn](https://yarnpkg.com) - Packages dependecy manager
+* [yarn](https://yarnpkg.com) - Packages dependency manager
 * [MYSQL](https://www.mysql.com/) - Open-source relational database management system
 
 ## Clone a repository
 
 ```sh
-$ git clone https://NikolaR92@bitbucket.org/NikolaR92/zadatak4.git
+$ git clone https://NikolaR92@bitbucket.org/NikolaR92/zadatak5.git
 ```
 
 ## Installing dependencies for Ubuntu
@@ -93,6 +93,15 @@ $ yarn upgrade - upgrades all packages of a project
 $ yarn start
 ```
 
+### Start client side
+```sh
+$ yarn start:client
+```
+
+### Start server side
+```sh
+$ yarn start:server 
+```
 ## Build project
 ```sh
 $ yarn build

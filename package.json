@@ -2,13 +2,18 @@
   "name": "MyAPP",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.5"
+  },
   "scripts": {
-    "server": "yarn --cwd src/server start:dev",
-    "client": "yarn --cwd src/client start",
+    "start:server": "yarn --cwd src/server start:dev",
+    "start:client": "yarn --cwd src/client start",
     "start": "yarn server | yarn client",
     "install": "yarn --cwd src/server install | yarn --cwd src/client install",
     "migrate": "yarn --cwd src/server migrate",
+    "eslint:client": "yarn --cwd src/client eslint",
     "migrate:data": "yarn --cwd src/server migrate:data",
     "generate:docs": "./node_modules/.bin/jsdoc ./src ./README.md"
   },

@@ -20,7 +20,7 @@ module.exports = (app) => {
 
 	/** Start - Product routes */
 	/** Route for getting all the products */
-	app.get('/api/product/:token', product.getProducts);
+	app.get('/api/product', product.getProducts);
 	/** END - Product routes */
 
 	/** Start - Order routes */
